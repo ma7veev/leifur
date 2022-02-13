@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  cache:
+    image: redis:latest
+    ports:
+      - 63333:6379
+  php:
+    build: ./images/php
+    volumes:
+      - ./www:/var/www
+    links:
+      - sql
+    depends_on:
+      - sql
+  sql:
+    image: mysql/mysql-server
+    ports:
+      - 33333:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+      - ./images/mysql/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=leifur
+      - MYSQL_DATABASE=leifur
+      - MYSQL_USER=leifur
+      - MYSQL_PASSWORD=leifur
+      - MYSQL_ROOT_HOST=172.18.0.4
