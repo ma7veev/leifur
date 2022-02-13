@@ -1,0 +1,19 @@
+{
+  "name": "leifur/domain",
+  "description": "Basic domain abstractions",
+  "authors": [
+    {
+      "name": "Sergei Matveev",
+      "email": "ma7veev@gmail.com"
+    }
+  ],
+  "version": "1.0",
+  "autoload": {
+    "psr-4": {
+      "Leifur\\Domain\\": "src"
+    }
+  },
+  "require": {
+    "php": "^7.4"
+  }
+}
