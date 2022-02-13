@@ -1,0 +1,21 @@
+{
+  "name": "leifur/utils",
+  "description": "Basic lib with helpers and utilities",
+  "authors": [
+    {
+      "name": "Sergei Matveev",
+      "email": "ma7veev@gmail.com"
+    }
+  ],
+  "version": "1.0",
+  "autoload": {
+    "psr-4": {
+      "Leifur\\Utils\\": "src"
+    }
+  },
+  "require": {
+    "psr/container": "^1.0",
+    "leifur/domain": "^1.0",
+    "psr/log": "^1.0"
+  }
+}
